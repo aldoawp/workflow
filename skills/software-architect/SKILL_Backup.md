@@ -15,21 +15,21 @@ You are a senior software architect writing design documents that turn approved 
 
 - Read `$ARGUMENTS` as the requested design scope. Default to the full design suite when the user does not limit the scope.
 - Read the approved PRD in `docs/prd/` and any existing files in `docs/design/` before writing.
-- Extract only the requirements and non-functional constraints that materially shape the design.
+- Extract the requirements and non-functional constraints that materially shape the design: scale, latency, availability, security, compliance, deployment model, integration boundaries, and team constraints.
 - Reuse existing repo conventions when they already answer a design question.
 - Ask one question at a time, with a recommended answer, only when a missing decision would materially change the design output.
 - If the PRD is too vague to support non-fabricated design decisions, stop and ask for a clarified or approved PRD first.
 
-### 2. Scope and Versioning
+### 2. Choose Output Scope
 
 - If `$ARGUMENTS` names a specific design area, write only that document.
 - Otherwise write the full design set as separate files in `docs/design/`.
-- Version every output file: `architecture-vN.md`, `security-vN.md`, `conventions-vN.md`, `data-model-vN.md`.
+- Apply versioning to every output file: `architecture-v1.md`, `security-v1.md`, `conventions-v1.md`, `data-model-v1.md`.
 - Never overwrite an existing version. Increment the suffix when needed.
 
-### 3. Documents
+### 3. Write Architecture
 
-**Architecture** `docs/design/architecture-vN.md`
+Write `docs/design/architecture-v1.md` with these sections:
 
 - **Summary**: one paragraph on what the system is and where its boundaries are.
 - **Constraints & Assumptions**: only the requirements or assumptions that materially shape the design.
@@ -40,7 +40,9 @@ You are a senior software architect writing design documents that turn approved 
 - **Operational Constraints**: deployment, scaling, availability, observability, or latency requirements only when they affect implementation.
 - **Key Trade-offs**: decisions, alternatives considered, and reversibility.
 
-**Security** `docs/design/security-vN.md`
+### 4. Write Security
+
+Write `docs/design/security-v1.md` with these sections:
 
 - **Trust Boundaries**: actors, sensitive boundaries, and the highest-risk interactions.
 - **Authentication & Authorization**: how identity and access are enforced.
@@ -50,7 +52,9 @@ You are a senior software architect writing design documents that turn approved 
 
 Include compliance only when it imposes concrete implementation constraints.
 
-**Conventions** `docs/design/conventions-vN.md`
+### 5. Write Conventions
+
+Write `docs/design/conventions-v1.md` with these sections:
 
 - **Project Structure**: the folders, modules, or boundaries the spec must target.
 - **Dependency Rules**: what may depend on what.
@@ -60,7 +64,9 @@ Include compliance only when it imposes concrete implementation constraints.
 
 Keep this doc short. If an existing repo convention already answers the question, reference it instead of restating it.
 
-**Data Model** `docs/design/data-model-vN.md`
+### 6. Write Data Model
+
+Write `docs/design/data-model-v1.md` with these sections:
 
 - **Entities**: core entities and what each represents.
 - **Relationships**: ownership, cardinality, and lifecycle rules.
@@ -68,9 +74,9 @@ Keep this doc short. If an existing repo convention already answers the question
 - **Access Patterns**: the reads, writes, and queries that shape the model.
 - **Migration Notes**: only when schema or stored-state evolution is part of the change.
 
-Add a Mermaid ERD only when it materially improves understanding.
+Include a Mermaid ERD when it materially improves understanding.
 
-### 4. Pause
+### 7. Pause
 
 After writing, print:
 
@@ -84,14 +90,16 @@ Design docs written:
 Review and reply "approve" to proceed to specs, "edit" to revise, or leave feedback.
 ```
 
-List only the files actually written, then stop. Do not write specs, plans, or implementation tasks until the human approves.
+List only the files actually written when the scope is limited.
+
+Then stop. Do not write specs, plans, or implementation tasks until the human approves.
 
 ## Rules
 
 - Read the approved PRD before writing anything.
 - Do not invent product requirements or implementation details that are not justified by the PRD or repo context.
-- Every document and section must remove a real downstream decision.
-- Omit sections that do not materially affect implementation, interfaces, invariants, failure behavior, or verification.
+- Every document and every section must remove a real decision the downstream spec writer would otherwise have to make.
+- If a section does not materially affect implementation, interfaces, invariants, failure behavior, or verification, omit it.
 - Surface trade-offs explicitly: state the choice, alternatives considered, why this option was chosen, and whether it is reversible.
 - Mark assumptions as `Assumption:` so downstream specs can inherit them without ambiguity.
 - Keep concerns separated: architecture owns system boundaries and stack choices; security owns trust boundaries and controls; data model owns entities and invariants; conventions owns only the structural and coding rules that specs need to follow.
