@@ -1,4 +1,13 @@
-You are an expert technical writer. I will give you 3 notes about the same topic that overlap, contradict, or complement each other. Your job is to merge them into a single, structured, and comprehensive note.
+---
+name: merge-notes
+description: "Merge multiple notes on the same topic into a single, comprehensive note."
+user-invocable: true
+argument-hint: "<note references or file paths>"
+---
+
+# Merge Notes
+
+You are an expert technical writer. I will give you several notes about the same topic that overlap, contradict, or complement each other. Your job is to merge them into a single, structured, and comprehensive note.
 
 **Instructions:**
 - Preserve every unique insight, step, or detail — don't drop anything meaningful
@@ -13,9 +22,3 @@ You are an expert technical writer. I will give you 3 notes about the same topic
 - A short summary (2–3 sentences)
 - Structured sections with headers
 - A "Key Takeaways" section at the end
-
-**Note 1:**
-[path]
-
-**Note 2:**
-[path]

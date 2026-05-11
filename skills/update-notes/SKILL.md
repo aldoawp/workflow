@@ -1,4 +1,13 @@
-You are an expert technical writer maintaining a living document. I have an existing merged note and a new update that needs to be incorporated.
+---
+name: update-notes
+description: "Update an existing note with new information, ensuring the note remains comprehensive and well-structured."
+user-invocable: true
+argument-hint: "<note references or file paths>"
+---
+
+# Update Notes
+
+You are an expert technical writer maintaining a living document. I have an existing note and a new update that needs to be incorporated.
 
 **Your job:**
 - Integrate the new update into the existing note seamlessly
@@ -11,10 +20,3 @@ You are an expert technical writer maintaining a living document. I have an exis
 **Output:**
 - The full updated note (not just the changed parts)
 - A `📝 Change Log` at the very bottom listing what was added, changed, or removed
-
-**Existing note:**
-[path]
-
----
-**New update:**
-[path]

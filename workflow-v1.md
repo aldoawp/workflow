@@ -64,6 +64,7 @@ AI works incrementally, executing one task at a time per spec:
   - ...
 
 Skills needed (owainlewis/blueprint):
+- branch: for every spec task initialization, create a new branch
 - implement: to execute a single task
 
 ### 4.2 Test-Driven Development (Optional)
@@ -111,6 +112,7 @@ Note: this summary is used as execution/output context of the previous session f
 
 Skills needed (owned):
 - [TBC] summarize: lorem ipsum
+- commit: for every session done (finished task) commit the results
 
 ---
 
