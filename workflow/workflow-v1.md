@@ -12,6 +12,9 @@ A structured, phase-based workflow for product engineering with AI that emphasiz
 
 All documents should be processed with meta prompting. Apply versioning for all documents: `[filename]_v1.md`, `[filename]_v2.md`, etc.
 
+Skills needed (owned):
+- [TBC] product-manager: lorem ipsum
+
 ---
 
 ## Phase 2: Design Docs
@@ -26,6 +29,9 @@ Create design documents as **separate files**, covering:
 - File/folder structure
 - Data model (ERD)
 
+Skills needed (owned):
+- [TBC] software-architect: lorem ipsum
+
 ---
 
 ## Phase 3: Specification
@@ -36,6 +42,11 @@ Create spec files based on features/user stories. Each spec must reference the r
 - Design doc files
 
 Break down each spec into discrete tasks.
+
+Skills needed (owainlewis/blueprint):
+- spec: to create the spec file derived from PRD & design docs
+- plan: to break work into agent-sized tasks
+- compress: to shortens agent-facing instructions without changing behavior
 
 ---
 
@@ -52,9 +63,15 @@ AI works incrementally, executing one task at a time per spec:
 - Spec 2
   - ...
 
+Skills needed (owainlewis/blueprint):
+- implement: to execute a single task
+
 ### 4.2 Test-Driven Development (Optional)
 
 Consider using TDD with a red-green test approach: have the AI generate test code **before** writing the implementation. This improves accuracy but consumes 2–3x output tokens and generates a larger context window, so it remains optional for now.
+
+Skills needed (owainlewis/blueprint):
+- tdd: test-first variant of implement
 
 ### 4.3 Task Review
 
@@ -64,6 +81,9 @@ After each task (and its tests, if using TDD), review the AI output to check whe
 - Has bugs
 - Has performance issues
 
+Skills needed (owainlewis/blueprint):
+- review: to do local code review
+
 ### 4.4 Checklist Update
 
 After the task execution and review loop is complete for a task, update the spec's ongoing task checklist:
@@ -71,6 +91,9 @@ After the task execution and review loop is complete for a task, update the spec
 ```text
 "[spec]_tasks_checklist.md"
 ```
+
+Skills needed (owned):
+- [TBC] checklist: lorem ipsum
 
 ---
 
@@ -86,6 +109,9 @@ After each session, summarize the execution and output into a new file:
 
 Note: this summary is used as execution/output context of the previous session for the next one/
 
+Skills needed (owned):
+- [TBC] summarize: lorem ipsum
+
 ---
 
 ## Phase 6: Integration Review
@@ -100,6 +126,9 @@ Apply versioning to integration docs as well:
 ```text
 "[integration_doc]_v1.md", "[integration_doc]_v2.md", ...
 ```
+
+Skills needed (owned):
+- [TBC] integration-review: lorem ipsum
 
 ---
 
