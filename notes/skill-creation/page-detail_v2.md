@@ -11,10 +11,10 @@ Outputs one `[page-name].md` per page into `docs/pages/` (kebab-case; create dir
 ## Input
 
 ### Auto-read references
-- **PRD** (`docs/prd/main-v1.md`, `docs/prd/[module]-v1.md`) — product context, features, user stories
-- **Sitemap** (`docs/design/sitemap.md`) — page map, navigation hierarchy, page relationships
-- **Data model** (`docs/design/data-model.md`) — entities, relationships, and data shapes the page may consume
-- **Design system** (`docs/design/design-system.md`) — tokens, component vocabulary
+- **PRD** (`docs/prd/main-v1.md`, `docs/prd/[module]-v1.md`(if exist) ) — product context, features, user stories
+- **Sitemap** (`docs/design/sitemap.md` (if exist)) — page map, navigation hierarchy, page relationships
+- **Data model** (`docs/design/data-model.md` (if exist)) — entities, relationships, and data shapes the page may consume
+- **Design system** (`docs/design/design-system.md` (if exist)) — tokens, component vocabulary
 
 ### Required
 - **Page name(s)** — pulls context from sitemap/PRD if matched; otherwise user must provide purpose + target user
