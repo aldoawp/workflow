@@ -1,0 +1,5 @@
+- need to give a clear standard component names like dropdown, searchbar, buttons, drawer, etc from the user input
+- give clear layout direction for page
+- animation or micro-interaction direction
+- give clear imagery direction
+- give the page content / copywriting

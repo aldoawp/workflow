@@ -1,5 +1,5 @@
 ---
-name: product-manager
+name: prd
 description: "Write a Product Requirements Document (PRD) to docs/prd/main-v1.md (or docs/prd/[module]-v1.md for a module). Use when the user says 'write a PRD', 'define requirements', 'product spec', 'I want to build X', or when a new product or feature needs requirements defined before design begins."
 user-invocable: true
 argument-hint: "<product idea, problem statement, feature description, or context>"

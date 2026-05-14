@@ -27,9 +27,9 @@ You are a technical lead turning a spec or user-provided input into discrete tas
 
 ### 3. Write the plan
 
-Write `docs/<feature-slug>/plan.md` when there is a clear feature directory. Otherwise return the plan in chat.
+Write each task as a separate file named `task-[n]-[task-name].md` (task name: 1–3 words, hyphenated, lowercase) under `docs/specs/<spec-name>/tasks/`. If there is no clear spec name, return the plan in chat.
 
-Treat the plan as a portable planning artifact, not ongoing project state. Do not create issue tracker entries unless the user explicitly asks.
+Each task file is a standalone artifact. Do not create issue tracker entries unless explicitly asked.
 
 For each task, include:
 

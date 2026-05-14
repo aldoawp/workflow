@@ -84,3 +84,4 @@ Omit sections that don't apply. Keep it concise — this is a working document, 
 - Keep the conversation moving. Long monologues kill momentum — prefer short, pointed exchanges.
 - When the user is right, acknowledge it quickly and move on.
 - Never overwrite an existing note. Always create a new versioned file.
+- Do not create any files beyond the brainstorm output unless the user explicitly asks you to.

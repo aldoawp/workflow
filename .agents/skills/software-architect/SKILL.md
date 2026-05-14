@@ -2,7 +2,7 @@
 name: software-architect
 description: "Write system-level design docs to docs/design/ for the design phase. Use when the user says 'write design docs', 'design the system', 'architecture doc', 'security design', 'data model', or after a PRD is approved and before feature specs are written."
 user-invocable: true
-argument-hint: "<PRD path, product/module name, or scope: all | architecture | security | conventions | data-model>"
+argument-hint: "<PRD path, product/module name, or scope: all | architecture | security | conventions | data-model | sitemap>"
 ---
 
 # Software Architect
@@ -24,8 +24,9 @@ You are a senior software architect writing design documents that turn approved 
 
 - If `$ARGUMENTS` names a specific design area, write only that document.
 - Otherwise write the full design set as separate files in `docs/design/`.
-- Version every output file: `architecture-vN.md`, `security-vN.md`, `conventions-vN.md`, `data-model-vN.md`.
+- Version every output file: `architecture-vN.md`, `security-vN.md`, `conventions-vN.md`, `data-model-vN.md`, `sitemap-vN.md`.
 - Never overwrite an existing version. Increment the suffix when needed.
+- Only generate the sitemap document when the PRD describes an application with a frontend (web, mobile, or desktop UI). Skip it entirely for backend-only or API-only applications.
 
 ### 3. Documents
 
@@ -70,6 +71,21 @@ Keep this doc short. If an existing repo convention already answers the question
 
 Add a Mermaid ERD only when it materially improves understanding.
 
+**Sitemap** `docs/design/sitemap-vN.md` *(frontend applications only)*
+
+- **Overview**: one paragraph describing the application's navigational structure and page organization.
+- **Page Inventory**: a flat or grouped list of every page or screen the application requires, each with:
+  - **Route / Path**: the URL path or screen identifier.
+  - **Purpose**: one-sentence description of what the page does.
+  - **Key Content & Actions**: the primary content blocks, forms, or user actions on the page.
+  - **Access**: public, authenticated, or role-restricted.
+- **Navigation Structure**: how pages relate hierarchically or through primary navigation flows.
+- **Shared Layouts**: reusable layout shells or frames that multiple pages share.
+
+Add a Mermaid sitemap or flowchart diagram only when the navigation hierarchy is non-trivial.
+
+Skip this document entirely when the PRD describes a backend-only or API-only application with no user-facing UI.
+
 ### 4. Pause
 
 After writing, print:
@@ -80,6 +96,7 @@ Design docs written:
 - docs/design/security-v1.md
 - docs/design/conventions-v1.md
 - docs/design/data-model-v1.md
+- docs/design/sitemap-v1.md        (frontend apps only)
 
 Review and reply "approve" to proceed to specs, "edit" to revise, or leave feedback.
 ```
