@@ -31,6 +31,21 @@ Write each task as a separate file named `task-[n]-[task-name].md` (task name: 1
 
 Each task file is a standalone artifact. Do not create issue tracker entries unless explicitly asked.
 
+### 4. Update the checklist
+
+After writing all task files, create or update `docs/specs/<spec-name>/checklist.md`.
+
+- If the file does not exist, create it with the following format:
+
+  ```
+  # Checklist for <spec-name>
+  - [ ] Task 1: <task-name> - <short description of the task>
+  - [ ] Task 2: <task-name> - <short description of the task>
+  - [ ] Task 3: <task-name> - <short description of the task>
+  ```
+
+- If the file already exists, append only the new tasks to the existing list, preserving any checked-off items and maintaining sequential numbering.
+
 For each task, include:
 
 - Goal
