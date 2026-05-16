@@ -26,7 +26,11 @@ You are closing out a task after its implement-review cycle is clean. Do not imp
 - Invoke the **summarize** skill, passing `<spec-name>`, `<task-number>`, and `<task-name>` as arguments.
 - The summarize skill handles locating previous summaries, rolling compression, and writing the file to `docs/specs/<spec-name>/summaries/task-<task-number>-summary.md`.
 
-### 4. Report
+### 4. Commit
+
+- Invoke the **commit** skill to stage and commit all changes made during the task.
+
+### 5. Report
 
 - Confirm the checklist was updated (show the line that changed).
 - Confirm the summary path.

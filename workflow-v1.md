@@ -93,9 +93,6 @@ After the task execution and review loop is complete for a task, update the spec
 "[spec]_tasks_checklist.md"
 ```
 
-Skills needed (owned):
-- [TBC] checklist: lorem ipsum
-
 ---
 
 ## Phase 5: Session Workflow
@@ -111,7 +108,8 @@ After each session, summarize the execution and output into a new file:
 Note: this summary is used as execution/output context of the previous session for the next one/
 
 Skills needed (owned):
-- [TBC] summarize: lorem ipsum
+- summarize
+- checklist
 - commit: for every session done (finished task) commit the results
 
 ---
