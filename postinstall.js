@@ -20,14 +20,17 @@ function copyDir(from, to) {
   }
 }
 
-const dirs = [".agents", path.join("templates", "docs")];
+const copies = [
+  { from: ".agents", to: ".agents" },
+  { from: path.join("templates", "docs"), to: "docs" },
+];
 
-for (const dir of dirs) {
-  const from = path.join(src, dir);
-  const to = path.join(dest, dir);
-  if (fs.existsSync(from)) {
-    copyDir(from, to);
-    console.log(`  copied: ${dir}`);
+for (const { from, to } of copies) {
+  const fromPath = path.join(src, from);
+  const toPath = path.join(dest, to);
+  if (fs.existsSync(fromPath)) {
+    copyDir(fromPath, toPath);
+    console.log(`  copied: ${to}`);
   }
 }
 
