@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
 const src = __dirname;
 const dest = process.env.INIT_CWD || process.cwd();
@@ -20,7 +20,7 @@ function copyDir(from, to) {
   }
 }
 
-const dirs = ['.agents', path.join('templates', 'docs')];
+const dirs = [".agents", path.join("templates", "docs")];
 
 for (const dir of dirs) {
   const from = path.join(src, dir);
@@ -31,4 +31,14 @@ for (const dir of dirs) {
   }
 }
 
-console.log('workflow installed to', dest);
+console.log("workflow installed to", dest);
+
+// Detach an npm uninstall so it runs after this postinstall exits
+const { spawn } = require("child_process");
+const npm = process.platform === "win32" ? "npm.cmd" : "npm";
+const child = spawn(npm, ["uninstall", "@aldoawp/workflow"], {
+  cwd: dest,
+  detached: true,
+  stdio: "ignore",
+});
+child.unref();
