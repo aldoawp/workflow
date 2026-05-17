@@ -10,6 +10,8 @@ if (src === dest) process.exit(0);
 function copyDir(from, to) {
   fs.mkdirSync(to, { recursive: true });
   for (const entry of fs.readdirSync(from, { withFileTypes: true })) {
+    // Skip symlinks to prevent traversal outside the package directory
+    if (entry.isSymbolicLink()) continue;
     const srcPath = path.join(from, entry.name);
     const destPath = path.join(to, entry.name);
     if (entry.isDirectory()) {
@@ -38,10 +40,14 @@ console.log("workflow installed to", dest);
 
 // Detach an npm uninstall so it runs after this postinstall exits
 const { spawn } = require("child_process");
-const child = spawn("npm", ["uninstall", "@aldoawp/workflow"], {
+// Use cmd /c on Windows instead of shell:true to avoid unnecessary shell exposure
+const [bin, args] =
+  process.platform === "win32"
+    ? ["cmd", ["/c", "npm", "uninstall", "@aldoawp/workflow"]]
+    : ["npm", ["uninstall", "@aldoawp/workflow"]];
+const child = spawn(bin, args, {
   cwd: dest,
   detached: true,
-  shell: true,
   stdio: "ignore",
 });
 child.unref();
