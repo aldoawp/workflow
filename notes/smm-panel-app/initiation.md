@@ -1,7 +1,0 @@
-- I want to create a social media panel website where the user could buy services like followers, likes, and other metrics for Instagram and Tiktok
-- It needs to rank well on google by doing SEO optimization best practices
-- It should have a blog to help the website ranking well on search engine
-- I should have blog generator engine with high quality, up-to-date, and opinionated content not just generic topic.
-- It will get the service from multiple vendors by integrating their APIs (dnoxsmm.com, indosmm.id, etc)
-- All the buying process will be automated, from the user visit the website, deciding which service to buy, buying the service, order notification and status, and giving after sales to user
-- The website should also look modern and have dribbble like UIs

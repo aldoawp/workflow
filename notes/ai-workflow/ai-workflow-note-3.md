@@ -1,1 +1,0 @@
-On the AI execution phase, consider using TDD. So instead of writing the test after the AI generated the implementation code, the AI should generate the test code first using red green test approach. But, because this approach will consume 2-3x output token usage and generate bigger context window, it's an optional approach for now.
