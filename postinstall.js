@@ -35,10 +35,10 @@ console.log("workflow installed to", dest);
 
 // Detach an npm uninstall so it runs after this postinstall exits
 const { spawn } = require("child_process");
-const npm = process.platform === "win32" ? "npm.cmd" : "npm";
-const child = spawn(npm, ["uninstall", "@aldoawp/workflow"], {
+const child = spawn("npm", ["uninstall", "@aldoawp/workflow"], {
   cwd: dest,
   detached: true,
+  shell: true,
   stdio: "ignore",
 });
 child.unref();
