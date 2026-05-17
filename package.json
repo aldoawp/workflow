@@ -4,7 +4,11 @@
   "description": "AI workflow skills, agents, and doc templates",
   "files": [
     ".agents",
-    "templates/docs"
+    "templates/docs",
+    "postinstall.js"
   ],
+  "scripts": {
+    "postinstall": "node postinstall.js"
+  },
   "license": "MIT"
 }
