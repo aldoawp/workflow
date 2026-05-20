@@ -1,6 +1,6 @@
 {
   "name": "@aldoawp/workflow",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "AI workflow skills, agents, and doc templates",
   "files": [
     ".agents",
