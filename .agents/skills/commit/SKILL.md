@@ -16,7 +16,8 @@ Create one clear Conventional Commit for the intended current changes.
 3. If there is nothing worth committing, stop.
 4. Stage only intended files. Never stage secrets.
 5. Use the user's message if provided. Otherwise write a Conventional Commit message: `type(scope): subject`.
-6. Create the commit and report the hash and message.
+6. Create the commit. Default to subject only: `git commit -m "<subject>"`. Add a body only when the why, risk, or verification genuinely matters — use a second `-m` flag: `git commit -m "<subject>" -m "<body>"`. Never embed literal `\n` in the message string.
+7. Report the hash and message.
 
 ## Rules
 
@@ -24,4 +25,5 @@ Create one clear Conventional Commit for the intended current changes.
 - Do not commit `.env`, credentials, or keys.
 - If the diff is not understood, stop.
 - Prefer `feat`, `fix`, `refactor`, `test`, `docs`, or `chore`.
-- The subject should say what changed. Add a body when the why, risk, or verification matters.
+- The subject should say what changed. Only add a body when the why, risk, or verification genuinely adds value — most commits need only a subject.
+- **When a body is needed**: use a second `-m` flag (`git commit -m "<subject>" -m "<body>"`). Never use `\n` escape sequences — they render as literal text on Windows PowerShell.

@@ -57,8 +57,9 @@ Repeat until the review returns zero actionable findings:
 
 ## Rules
 
-- One task per invocation. Do not batch multiple checklist items.
+- One task per invocation. Do not batch multiple checklist items. Unless the user explicitly asked to work on multiple tasks in one session.
 - When auto-selecting from a spec.md path, always pick the first unchecked task — never skip ahead.
 - Do not update the checklist or write session summaries here — that is `end-task`'s job.
+- Do not commit any changes here — committing is `end-task.md`'s workflow job.
 - Resolve implement-skill scope questions before entering the review loop.
 - Do not use review findings as an excuse for unrelated refactors.
