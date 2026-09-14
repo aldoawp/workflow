@@ -20,8 +20,10 @@ You are a technical lead turning a spec or user-provided input into discrete tas
 
 ### 2. Split the work
 
-- Break the work into tasks sized for one focused agent execution, review, and rollback.
-- Prefer vertical slices over layer-by-layer plans.
+- Default to the fewest tasks that still let each land as one focused agent execution, review, and rollback. One task is fine when the whole scope fits in one sitting.
+- Only split further when a single task would blow an agent's context (very large diff, many unrelated files), mixes independently reviewable/revertable changes, or has a real dependency/risk boundary (e.g. needs a decision resolved before the rest can proceed).
+- Do not split by layer or step count alone — one task can span model, endpoint, and UI for the same slice of behavior. Prefer vertical slices over layer-by-layer plans.
+- Merge tasks that would otherwise only differ by "and then" sequencing with no independent review value.
 - Order tasks by dependency and risk.
 - Surface shared decisions once before the affected tasks.
 
@@ -63,5 +65,6 @@ For each task, include:
 - Each task must carry enough context for an AI agent with no prior session.
 - Acceptance criteria describe outcomes, not implementation steps.
 - Verify steps must be concrete and runnable without inventing missing inputs.
-- If a task needs many acceptance criteria or mixes unrelated decision clusters, split it.
+- Bias toward fewer, larger tasks. Splitting has a real cost: more agent sessions, more handoff overhead, more context each task must restate. Only split when it earns back that cost (independent review/rollback, a real risk or dependency boundary, or context that would otherwise overflow one session).
+- If a task needs many acceptance criteria or mixes unrelated decision clusters, split it — but check first whether the criteria are actually unrelated or just multiple facets of the same change.
 - Include error behavior in the task that owns it.

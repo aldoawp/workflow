@@ -31,7 +31,7 @@ Write `docs/<feature-slug>/spec.md` using the sections below. Tailor detail to t
 - **What**: one-paragraph summary.
 - **Context**: why this matters, what exists today, links to relevant code.
 - **Requirements**: specific, testable statements of what the system must do.
-- **Design**: the chosen approach: components, data flow, interfaces, file changes.
+- **Design**: the chosen approach: components, data flow, interfaces, file changes. Describe logic as plain-English algorithmic steps ("1. Validate input, 2. Look up record, 3. ..."), not code. A short code block is allowed only to pin an exact contract (e.g. a function signature, type, or schema) that must not be paraphrased — never for illustrating logic or flow.
 - **Decisions**: choices the agent would otherwise make alone. For each, state the choice, alternatives considered, why this one, and whether it is reversible. Mark assumptions as `Assumption:`.
 - **Versions** *(when relevant)*: runtimes, services, frameworks, and dependencies the implementation relies on, with the current stable/LTS choice and source.
 - **Invariants** *(when relevant)*: what must not break, and how to check it.
@@ -56,4 +56,6 @@ Then stop. Do not plan, implement, or run further tools until the human responds
 - If two implementations would behave differently, specify the default.
 - Match existing patterns in the codebase. If the spec proposes a new pattern, justify it explicitly.
 - Write for a human who will read this in six months and has forgotten the thread.
-- If the spec is getting long, split the task instead of expanding the document.
+- Default to one spec for the requested scope, even if it touches several files or steps. Only create more than one spec.md when the request itself spans multiple independently shippable features or unrelated domains (e.g. two separate PRDs) — never simply because the work has multiple parts, layers, or steps.
+- Keep it as tight as possible: include only what an implementing agent needs to act without guessing. Omit sections that don't materially change the implementation, and don't restate context the codebase already makes obvious.
+- If the spec is getting long because it covers many steps of one feature, that belongs in **plan** (task breakdown), not in a second spec. Split into tasks, not into more specs.

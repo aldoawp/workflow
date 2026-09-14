@@ -53,6 +53,7 @@ Then stop. Do not begin design docs or specs until the human approves.
 - Non-functional requirements feed directly into architecture and security design docs; include measurable thresholds.
 - Out of Scope is mandatory.
 - No implementation details — "what" and "why" only.
-- If the PRD is too large for one engineer to reason about in one read, split into module PRDs (main sets product-wide context; modules own their functional requirements).
+- No code, pseudocode, schemas, or payload samples. If a requirement needs an example, describe it as plain-English steps or a short scenario, never as code.
+- If the PRD is too large for one engineer to reason about in one read, split into module PRDs (main sets product-wide context; modules own their functional requirements). Do not split merely because there are many requirements — split only when the domains are genuinely independent (separately shippable, owned by different parts of the system).
 - If the idea is too vague for a non-fabricated PRD, say so and ask for more input.
 - Apply version suffix (`_v1.md`) to output files; never overwrite existing versions.

@@ -114,4 +114,5 @@ List only the files actually written, then stop. Do not write specs, plans, or i
 - Keep concerns separated: architecture owns system boundaries and stack choices; security owns trust boundaries and controls; data model owns entities and invariants; conventions owns only the structural and coding rules that specs need to follow.
 - Prefer the smallest set of design docs that fully covers the requested scope.
 - Write each document so it remains useful to a human reading it six months later with no chat context.
-- If the design is too broad for one useful pass, split it into modules or bounded contexts instead of writing a vague global document.
+- If the design is too broad for one useful pass, split it into modules or bounded contexts instead of writing a vague global document. Do not split merely because there is a lot to describe — split only when the modules are genuinely independent (separate ownership, separate lifecycle).
+- No code snippets, sample payloads, or config file dumps. Describe technology choices, data flow, and logic as plain-English statements. A brief interface signature is allowed only when the exact contract must be pinned, never as illustration.
